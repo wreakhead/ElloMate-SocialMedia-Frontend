@@ -1,8 +1,18 @@
 .leftbar {
   flex: 3;
-  height: calc(100vh-60px);
+  height: calc(100vh - 60px);
   overflow-y: scroll;
 }
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background-color: #ffff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #607d8b;
+}
+
 .leftbarWrap {
   padding: 20px;
 }
