@@ -1,3 +1,106 @@
-.rightbar{
-    flex: 3.5;
+.rightbar {
+  flex: 3.5;
+  z-index: -999;
+}
+.rightWrap {
+  padding: 20px 20px 0 0;
+}
+.birthdays {
+  display: flex;
+  align-items: center;
+}
+.bdayText {
+  color: #455a64;
+}
+.cakeIcon {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}
+.adds {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 100%;
+}
+.friendList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.friend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.friendContainer {
+  margin-right: 10px;
+  position: relative;
+}
+.friendImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.onlineFriends {
+  color: #455a64;
+  margin-bottom: 10px;
+}
+.rightOnline {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #00e676;
+  position: absolute;
+  top: -2px;
+  border: 1px solid white;
+}
+.friendsName {
+  font-weight: 500;
+  color: #546e7a;
+}
+
+/* profile */
+.rightbarAbout {
+  font-size: 21px;
+  color: #455a64;
+  margin-bottom: 10px;
+}
+.followerImg {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.rightbarInfo {
+  margin-bottom: 30px;
+}
+.rightbarInfoItem {
+  margin-bottom: 10px;
+}
+.rightbarType {
+  margin-right: 7px;
+  font-weight: 500;
+  color: #546e7a;
+  font-size: large;
+}
+.rightbarValue {
+  color: #546e7a;
+  font-size: medium;
+}
+.following {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.follower {
+  display: flex;
+  flex-direction: column;
+   
+  margin-right: 10px; 
+}
+.followerName {
+  margin-left: 5px;
+  color: #546e7a;
 }

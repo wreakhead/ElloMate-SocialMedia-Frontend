@@ -1,16 +1,19 @@
 import { Chat, Notifications, Person, Search } from "@material-ui/icons";
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   return (
     <div className="navbarContainer">
       <div className="navbarLeft">
-        <span className="logo">ElloMate</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">ElloMate</span>
+        </Link>
       </div>
       <div className="navbarCenter">
         <div className="searchbar">
-          <Search className="searchIcon"/>
+          <Search className="searchIcon" />
           <input placeholder="search..." className="searchInput" />
         </div>
       </div>

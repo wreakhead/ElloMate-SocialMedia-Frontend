@@ -1,0 +1,79 @@
+.signin {
+  width: 100vw;
+  height: 100vh;
+  background-color: #cfd8dc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signinWrap {
+  width: 70%;
+  height: 70%;
+  display: flex;
+}
+.signinLeft,
+.signinRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.signinLogo {
+  font-size: 50px;
+  font-weight: 800;
+  color: #455a64;
+}
+.signinDescribe {
+  color: #607d8b;
+}
+
+/* sigin in  */
+.signinBox {
+  height: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #eceff1;
+}
+.signinInput {
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #eceff1;
+  font-size: 18px;
+  padding-left: 20px;
+}
+.signinInput:focus {
+  outline: none;
+}
+.signinButton {
+  height: 40px;
+  border: none;
+  background-color: teal;
+  color: #cfd8dc;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: medium;
+  cursor: pointer;
+  width: 90%;
+  align-self: center;
+}
+.forgotPass {
+  text-align: center;
+  color: #455a64;
+  cursor: pointer;
+}
+.createAcc {
+  height: 40px;
+  border: none;
+  background-color: teal;
+  color: #cfd8dc;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: medium;
+  cursor: pointer;
+  width: 90%;
+  align-self: center;
+}
