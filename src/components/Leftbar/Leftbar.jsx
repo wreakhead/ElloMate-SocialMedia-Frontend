@@ -10,9 +10,12 @@ import {
   WorkOutline,
 } from "@material-ui/icons";
 import React from "react";
+import { useContext } from "react";
+import { Context } from "../../context/Context";
 import "./Leftbar.css";
 
 function Leftbar() {
+  const { user } = useContext(Context);
   return (
     <div className="leftbar">
       <div className="leftbarWrap">
@@ -57,78 +60,7 @@ function Leftbar() {
         <button className="leftbarButton">more</button>
         <hr className="leftbarHr" />
         <ul className="leftbarFriendList">
-          <li className="leftbarFriend">
-            <img
-              src="https://yt3.ggpht.com/a/AATXAJxky5bNqmYpunHNlCAu_5aTgRY9nPkCowB2eg=s900-c-k-c0xffffffff-no-rj-mo"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">morty</span>
-          </li>
-          <li className="leftbarFriend">
-            <img
-              src="https://yt3.ggpht.com/a/AATXAJxky5bNqmYpunHNlCAu_5aTgRY9nPkCowB2eg=s900-c-k-c0xffffffff-no-rj-mo"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">morty</span>
-          </li>
-          <li className="leftbarFriend">
-            <img
-              src="https://yt3.ggpht.com/a/AATXAJxky5bNqmYpunHNlCAu_5aTgRY9nPkCowB2eg=s900-c-k-c0xffffffff-no-rj-mo"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">morty</span>
-          </li>
-          <li className="leftbarFriend">
-            <img
-              src="https://yt3.ggpht.com/a/AATXAJxky5bNqmYpunHNlCAu_5aTgRY9nPkCowB2eg=s900-c-k-c0xffffffff-no-rj-mo"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">morty</span>
-          </li>
-          <li className="leftbarFriend">
-            <img
-              src="https://yt3.ggpht.com/a/AATXAJxky5bNqmYpunHNlCAu_5aTgRY9nPkCowB2eg=s900-c-k-c0xffffffff-no-rj-mo"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">morty</span>
-          </li>
-          <li className="leftbarFriend">
-            <img
-              src="https://yt3.ggpht.com/a/AATXAJxky5bNqmYpunHNlCAu_5aTgRY9nPkCowB2eg=s900-c-k-c0xffffffff-no-rj-mo"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">morty</span>
-          </li>
-          <li className="leftbarFriend">
-            <img
-              src="https://yt3.ggpht.com/a/AATXAJxky5bNqmYpunHNlCAu_5aTgRY9nPkCowB2eg=s900-c-k-c0xffffffff-no-rj-mo"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">morty</span>
-          </li>
-          <li className="leftbarFriend">
-            <img
-              src="https://yt3.ggpht.com/a/AATXAJxky5bNqmYpunHNlCAu_5aTgRY9nPkCowB2eg=s900-c-k-c0xffffffff-no-rj-mo"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">morty</span>
-          </li>
-          <li className="leftbarFriend">
-            <img
-              src="https://yt3.ggpht.com/a/AATXAJxky5bNqmYpunHNlCAu_5aTgRY9nPkCowB2eg=s900-c-k-c0xffffffff-no-rj-mo"
-              alt=""
-              className="friendImg"
-            />
-            <span className="friendName">morty</span>
-          </li>
+          
           <li className="leftbarFriend">
             <img
               src="https://yt3.ggpht.com/a/AATXAJxky5bNqmYpunHNlCAu_5aTgRY9nPkCowB2eg=s900-c-k-c0xffffffff-no-rj-mo"

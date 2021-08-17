@@ -1,8 +1,30 @@
 import { Cake } from "@material-ui/icons";
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
+import { useState } from "react";
+import { useContext } from "react";
+import { Context } from "../../context/Context";
 import "./Rightbar.css";
 
 function Rightbar({ profile }) {
+  const { user } = useContext(Context);
+  const [followers, setFollowers] = useState([]);
+
+  useEffect(() => {
+    const getFriends = async () => {
+      try {
+        const followerList = await axios.get("user/followers/" + user._id);
+        setFollowers(followerList.data);
+        console.log(followers);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getFriends();
+  }, []);
+  console.log(followers);
+
   const homePage = () => {
     return (
       <>
@@ -15,6 +37,7 @@ function Rightbar({ profile }) {
           alt=""
           className="adds"
         />
+        <h4 className="onlineFriends">Online Friends</h4>
         <ul className="friendList">
           <li className="friend">
             <div className="friendContainer">
@@ -30,7 +53,6 @@ function Rightbar({ profile }) {
             <span className="friendsName">morty</span>
           </li>
         </ul>
-        <h4 className="onlineFriends">Online Friends</h4>
       </>
     );
   };
@@ -41,35 +63,39 @@ function Rightbar({ profile }) {
         <h4 className="rightbarAbout">About</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
-            <span className="rightbarType">City:</span>
-            <span className="rightbarValue">NYC</span>
+            <span className="rightbarType">Relationship:</span>
+            <span className="rightbarValue">
+              {user.relationship === 1
+                ? "Single"
+                : user.relationship === 2
+                ? "Married"
+                : user.relationship === 3
+                ? "Complicated"
+                : ""}
+            </span>
           </div>
-          <h4 className="rightbarAbout">Friends</h4>
+          <div className="rightbarInfoItem">
+            <span className="rightbarType">City:</span>
+            <span className="rightbarValue">{user.city}</span>
+          </div>
+          <div className="rightbarInfoItem">
+            <span className="rightbarType">From:</span>
+            <span className="rightbarValue">{user.from}</span>
+          </div>
+          <h4 className="rightbarAbout">Followers</h4>
           <div className="following">
-            <div className="follower">
-              <img
-                src="https://th.bing.com/th/id/OIP.uGTVnz34LP8Aeuq9HZAsGwHaFy?pid=ImgDet&rs=1"
-                alt=""
-                className="followerImg"
-              />
-              <span className="followerName">Beth</span>
-            </div>
-            <div className="follower">
-              <img
-                src="https://th.bing.com/th/id/OIP.uGTVnz34LP8Aeuq9HZAsGwHaFy?pid=ImgDet&rs=1"
-                alt=""
-                className="followerImg"
-              />
-              <span className="followerName">Beth</span>
-            </div>
-            <div className="follower">
-              <img
-                src="https://th.bing.com/th/id/OIP.uGTVnz34LP8Aeuq9HZAsGwHaFy?pid=ImgDet&rs=1"
-                alt=""
-                className="followerImg"
-              />
-              <span className="followerName">Beth</span>
-            </div>
+            {followers.map((follower) => {
+              return (
+                <div className="follower" key={follower._id}>
+                  <img
+                    src={follower.profilePicture}
+                    alt=""
+                    className="followerImg"
+                  />
+                  <span className="followerName">{follower.username}</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </>

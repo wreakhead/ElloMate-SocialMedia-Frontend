@@ -1,6 +1,33 @@
 import "./Signup.css";
+import { useRef } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function Signup() {
+  const email = useRef();
+  const password = useRef();
+  const username = useRef();
+  const confPassword = useRef();
+  const history = useHistory();
+
+  const formSubmitted = async (event) => {
+    event.preventDefault();
+    if (password.current.value !== confPassword.current.value) {
+      confPassword.current.setCustomValidity("Password do not match");
+    } else {
+      const user = {
+        username: username.current.value,
+        password: password.current.value,
+        email: email.current.value,
+      };
+      try {
+        await axios.post("auth/signup", user);
+        history.push("/signin");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
   return (
     <div className="signup">
       <div className="signupWrap">
@@ -9,31 +36,42 @@ function Signup() {
           <span className="signupDescribe">connect to people or don't ...</span>
         </div>
         <div className="signupRight">
-          <div className="signupBox">
+          <form className="signupBox" onSubmit={formSubmitted}>
             <input
+              required
+              ref={username}
               type="text"
               className="Name signupInput"
               placeholder="Name"
             />
             <input
-              type="text"
+              ref={email}
+              required
+              type="email"
               className="Email signupInput"
               placeholder="Email"
             />
             <input
-              type="text"
+              ref={password}
+              required
+              type="password"
               className="Password signupInput"
               placeholder="Password"
+              minLength="6"
             />
             <input
-              type="text"
+              required
+              ref={confPassword}
+              type="password"
               className="Password signupInput"
               placeholder="Confirm Password"
             />
-            <button className="signupButton">Sign Up</button>
+            <button type="submit" className="signupButton">
+              Sign Up
+            </button>
 
-            <button className="createAcc">Sign In</button>
-          </div>
+            <button className="signupButton">Sign In</button>
+          </form>
         </div>
       </div>
     </div>

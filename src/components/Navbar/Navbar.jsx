@@ -1,9 +1,12 @@
 import { Chat, Notifications, Person, Search } from "@material-ui/icons";
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
 import "./Navbar.css";
 
 function Navbar() {
+  const { user } = useContext(Context);
   return (
     <div className="navbarContainer">
       <div className="navbarLeft">
@@ -36,11 +39,13 @@ function Navbar() {
             <span className="navbarIconBadge">1</span>
           </div>
         </div>
-        <img
-          src="https://th.bing.com/th/id/OIP.bD2wjPmvukCQUWgmPqfF4AHaHa?pid=ImgDet&rs=1"
-          alt="profile"
-          className="navbarImg"
-        />
+        <Link to="/profile">
+          <img
+            src={user?.profilePicture}
+            alt={user?.username}
+            className="navbarImg"
+          />
+        </Link>
       </div>
     </div>
   );

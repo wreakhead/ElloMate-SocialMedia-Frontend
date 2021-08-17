@@ -77,3 +77,9 @@
   width: 90%;
   align-self: center;
 }
+
+.signinProgress {
+  height: 30px !important;
+  width: 30px !important;
+  color: #eceff1 !important;
+}
