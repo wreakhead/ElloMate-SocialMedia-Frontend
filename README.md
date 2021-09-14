@@ -1,5 +1,12 @@
-# Getting Started with Create React App
+# Ellomate social-media app:
 
+- Part1
+<img alt="projector"  src="https://media.giphy.com/media/zaMtkWfEyD4BMista5/giphy.gif?cid=790b7611db9842b6a5bbd64f96255101f2079ca4caf582ae&rid=giphy.gif&ct=g" height="500px" >
+
+- Part2
+<img alt="projector"  src="https://media.giphy.com/media/A4IFMwGMDBjgvqJMoS/giphy.gif?cid=790b76115eada73018bba5e15bce46e85ecc555691bea635&rid=giphy.gif&ct=g" height="500px">
+     
+----     
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
